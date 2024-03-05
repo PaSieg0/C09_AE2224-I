@@ -69,7 +69,7 @@ def extract_and_coefficients(path, velocity, density, area, chord):
 
     df = pd.read_csv(path, sep='\s+')
     for i in range(df.shape[0]):
-        global_forces = aircraft2global(np.array([df.loc[i, 'Fx'], 0, df.loc[i, 'Fz']]), df.loc[i, 'AoA']*np.pi/180)
+        global_forces = aircraft2global(np.array([-df.loc[i, 'Fx'], 0, df.loc[i, 'Fz']]), df.loc[i, 'AoA']*np.pi/180)
         cl = calculate_coeff(global_forces[2], density, velocity, area)
         cd = calculate_coeff(-global_forces[0], density, velocity, area)
         cm = calculate_coeff(df.loc[i, 'My'], density, velocity, area*chord)
@@ -122,7 +122,14 @@ if __name__ == "__main__":
     plt.show()
 
     for i in range(4):
-        plt.plot(data2plot[i][2], data2plot[i][1], label=f"{i}", marker='.') # Drag Buckets
+        plt.plot(data2plot[i][0], data2plot[i][2], label=f"{i}", marker='.') # CD-alpha
+    
+    plt.legend()
+    plt.title("CD-alpha")
+    plt.show()
+
+    for i in range(4):
+        plt.plot(data2plot[i][2], data2plot[i][1], label=f"{i}", marker='.') # Drag Polars
 
     plt.legend()
     plt.title("Drag Polars")
