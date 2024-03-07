@@ -114,30 +114,43 @@ if __name__ == "__main__":
     data2plot[3] = extract_and_coefficients(r"./Dataset/CNT/CLIMB/Global_forces.txt", CLIMB_V, CLIMB_RHO, WING_AREA, CHORD)
 
 
+
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][1], label=f"{i}", marker='.') # Cl-alpha
     
     plt.legend()
     plt.title("CL-alpha")
-    plt.show()
+    plt.savefig('./Plots/Cl-alpha.png')
+    plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][2], label=f"{i}", marker='.') # CD-alpha
     
     plt.legend()
     plt.title("CD-alpha")
-    plt.show()
+    plt.savefig('./Plots/Cd-alpha.png')
+    plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][2], data2plot[i][1], label=f"{i}", marker='.') # Drag Polars
 
     plt.legend()
     plt.title("Drag Polars")
-    plt.show()
+    plt.savefig('./Plots/Cl-Cd.png')
+    plt.clf()
+
+    for i in range(4):
+        plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=f"{i}", marker='.') # CM-alpha
+
+    plt.legend()
+    plt.title("CL/CD-alpha")
+    plt.savefig('./Plots/ClCd-alpha.png')
+    plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][3], label=f"{i}", marker='.') # CM-alpha
 
     plt.legend()
     plt.title("CM-alpha")
-    plt.show()
+    plt.savefig('./Plots/Cm-alpha.png')
+    plt.clf()

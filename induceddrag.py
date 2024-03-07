@@ -1,4 +1,4 @@
-from aerocoeff import aircraft2global
+from aerocoeff import aircraft2global, extract_and_coefficients
 
 # Prandtl's lifting line theory says that the induced drag is given by: CDi = CL^2/(pi*AR*e)
 
