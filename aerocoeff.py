@@ -113,8 +113,6 @@ if __name__ == "__main__":
     #-----------------CLIMB CNT----------------------
     data2plot[3] = extract_and_coefficients(r"./Dataset/CNT/CLIMB/Global_forces.txt", CLIMB_V, CLIMB_RHO, WING_AREA, CHORD)
 
-
-
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][1], label=f"{i}", marker='.') # Cl-alpha
     
