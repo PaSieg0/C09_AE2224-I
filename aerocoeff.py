@@ -113,8 +113,10 @@ if __name__ == "__main__":
     #-----------------CLIMB CNT----------------------
     data2plot[3] = extract_and_coefficients(r"./Dataset/CNT/CLIMB/Global_forces.txt", CLIMB_V, CLIMB_RHO, WING_AREA, CHORD)
 
+    labels = ['SBW Cruise', 'SBW Climb', 'CNT Cruise', 'CNT Climb']
+
     for i in range(4):
-        plt.plot(data2plot[i][0], data2plot[i][1], label=f"{i}", marker='.') # Cl-alpha
+        plt.plot(data2plot[i][0], data2plot[i][1], label=labels[i], marker='.') # Cl-alpha
     
     plt.legend()
     plt.title("CL-alpha")
@@ -122,7 +124,7 @@ if __name__ == "__main__":
     plt.clf()
 
     for i in range(4):
-        plt.plot(data2plot[i][0], data2plot[i][2], label=f"{i}", marker='.') # CD-alpha
+        plt.plot(data2plot[i][0], data2plot[i][2], label=labels[i], marker='.') # CD-alpha
     
     plt.legend()
     plt.title("CD-alpha")
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     plt.clf()
 
     for i in range(4):
-        plt.plot(data2plot[i][2], data2plot[i][1], label=f"{i}", marker='.') # Drag Polars
+        plt.plot(data2plot[i][2], data2plot[i][1], label=labels[i], marker='.') # Drag Polars
 
     plt.legend()
     plt.title("Drag Polars")
@@ -138,7 +140,7 @@ if __name__ == "__main__":
     plt.clf()
 
     for i in range(4):
-        plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=f"{i}", marker='.') # CM-alpha
+        plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=labels[i], marker='.') # CM-alpha
 
     plt.legend()
     plt.title("CL/CD-alpha")
@@ -146,7 +148,7 @@ if __name__ == "__main__":
     plt.clf()
 
     for i in range(4):
-        plt.plot(data2plot[i][0], data2plot[i][3], label=f"{i}", marker='.') # CM-alpha
+        plt.plot(data2plot[i][0], data2plot[i][3], label=labels[i], marker='.') # CM-alpha
 
     plt.legend()
     plt.title("CM-alpha")
