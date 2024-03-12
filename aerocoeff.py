@@ -120,7 +120,7 @@ if __name__ == "__main__":
     
     plt.legend()
     plt.title("CL-alpha")
-    plt.savefig('./Plots/Cl-alpha.png')
+    plt.savefig('./Plots/Cl-alpha.pdf')
     plt.clf()
 
     for i in range(4):
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     
     plt.legend()
     plt.title("CD-alpha")
-    plt.savefig('./Plots/Cd-alpha.png')
+    plt.savefig('./Plots/Cd-alpha.pdf')
     plt.clf()
 
     for i in range(4):
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
     plt.legend()
     plt.title("Drag Polars")
-    plt.savefig('./Plots/Cl-Cd.png')
+    plt.savefig('./Plots/Cl-Cd.pdf')
     plt.clf()
 
     for i in range(4):
@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     plt.legend()
     plt.title("CL/CD-alpha")
-    plt.savefig('./Plots/ClCd-alpha.png')
+    plt.savefig('./Plots/ClCd-alpha.pdf')
     plt.clf()
 
     for i in range(4):
@@ -152,5 +152,5 @@ if __name__ == "__main__":
 
     plt.legend()
     plt.title("CM-alpha")
-    plt.savefig('./Plots/Cm-alpha.png')
+    plt.savefig('./Plots/Cm-alpha.pdf')
     plt.clf()
