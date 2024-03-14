@@ -140,7 +140,7 @@ if __name__ == "__main__":
     plt.clf()
 
     for i in range(4):
-        plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=labels[i], marker='.') # CM-alpha
+        plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=labels[i], marker='.') # CLCD-alpha
 
     plt.legend()
     plt.title("CL/CD-alpha")
@@ -153,4 +153,12 @@ if __name__ == "__main__":
     plt.legend()
     plt.title("CM-alpha")
     plt.savefig('./Plots/Cm-alpha.pdf')
+    plt.clf()
+
+    for i in range(4):
+        plt.plot(data2plot[i][1], data2plot[i][1]/data2plot[i][2], label=labels[i], marker='.') # CLCd-Cl
+
+    plt.legend()
+    plt.title("CLCd-Cl")
+    plt.savefig('./Plots/CLCd-Cl.pdf')
     plt.clf()
