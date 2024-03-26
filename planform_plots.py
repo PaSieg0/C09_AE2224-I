@@ -51,14 +51,17 @@ Strut_y = np.append(Strut_y, [0])
 Strut_chords = np.append(Strut_chords, [0.5 * (Strut_coords['cCd'] / Strut_coords['Cd']).iloc[0]])
 
 #Graphing wing geometries
-plt.figure(figsize=(10, 7))
+plt.figure(figsize=(15, 5))
 
 #Comparison plot of CNT and SBW
-plt.plot(CNT_y, CNT_chords)
-plt.plot(SBW_y, SBW_chords)
+plt.plot(CNT_y, CNT_chords, label = 'Cantilever wing')
+plt.plot(SBW_y, SBW_chords, label = 'SBW main wing')
+plt.xlim(-0.25, 17.75)
+plt.ylim(-3, 3)
 plt.xlabel("Span position [m]", fontsize = 15)
 plt.ylabel("Chord [m]", fontsize = 15)
-plt.axis('equal')
+#plt.axis('equal')
+plt.legend(fontsize = 15)
 plt.grid(True)
 plt.tight_layout()
 plt.savefig('./Plots/WingGeometry/CNT_SBW_Planforms.pdf')
