@@ -113,44 +113,61 @@ if __name__ == "__main__":
     #-----------------CLIMB CNT----------------------
     data2plot[3] = extract_and_coefficients(r"./Dataset/CNT/CLIMB/Global_forces.txt", CLIMB_V, CLIMB_RHO, WING_AREA, CHORD)
 
-    labels = ['SBW Cruise', 'SBW Climb', 'CNT Cruise', 'CNT Climb']
+    plt.figure(figsize=(10, 7))
+    labels = ['SBW - Cruise', 'SBW - Climb', 'CNT - Cruise', 'CNT - Climb']
+    params = {'mathtext.default': 'regular' }
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][1], label=labels[i], marker='.') # Cl-alpha
     
-    plt.legend()
-    plt.title("CL-alpha")
+    plt.legend(fontsize = 15)
+    plt.xlabel("$\\alpha$ [$\\degree$]", fontsize = 15)
+    plt.ylabel("$C_L$", fontsize = 15)
+    plt.grid(True)
+    plt.tight_layout()
     plt.savefig('./Plots/Cl-alpha.pdf')
     plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][2], label=labels[i], marker='.') # CD-alpha
     
-    plt.legend()
-    plt.title("CD-alpha")
+    plt.legend(fontsize = 15)
+    plt.xlabel("$\\alpha$ [$\\degree$]", fontsize = 15)
+    plt.ylabel("$C_D$", fontsize = 15)
+    plt.grid(True)
+    plt.tight_layout()
     plt.savefig('./Plots/Cd-alpha.pdf')
     plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][2], data2plot[i][1], label=labels[i], marker='.') # Drag Polars
 
-    plt.legend()
-    plt.title("Drag Polars")
+    plt.legend(fontsize = 15)
+    plt.xlabel("$C_D$", fontsize = 15)
+    plt.ylabel("$C_L$", fontsize = 15)
+    plt.grid(True)
+    plt.tight_layout()
     plt.savefig('./Plots/Cl-Cd.pdf')
     plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][1]/data2plot[i][2], label=labels[i], marker='.') # CM-alpha
 
-    plt.legend()
-    plt.title("CL/CD-alpha")
+    plt.legend(fontsize = 15)
+    plt.xlabel("$\\alpha$ [$\\degree$]", fontsize = 15)
+    plt.ylabel("$\\frac{C_L}{C_D}$", fontsize = 15)
+    plt.grid(True)
+    plt.tight_layout()
     plt.savefig('./Plots/ClCd-alpha.pdf')
     plt.clf()
 
     for i in range(4):
         plt.plot(data2plot[i][0], data2plot[i][3], label=labels[i], marker='.') # CM-alpha
 
-    plt.legend()
-    plt.title("CM-alpha")
+    plt.legend(fontsize = 15)
+    plt.xlabel("$\\alpha$ [$\\degree$]", fontsize = 15)
+    plt.ylabel("$C_M$", fontsize = 15)
+    plt.grid(True)
+    plt.tight_layout()
     plt.savefig('./Plots/Cm-alpha.pdf')
     plt.clf()
